@@ -1,0 +1,21 @@
+{
+  "id": "1f6f51c9-40f9-4e20-be2a-171508768af6",
+  "version": "2.0",
+  "name": "SentryTest",
+  "url": "",
+  "tests": [{
+    "id": "549b52de-5fa1-4d99-81e3-78dfdbbf6bdb",
+    "name": "Untitled",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "7743d02d-b93f-4264-ac77-3a027188e07b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["549b52de-5fa1-4d99-81e3-78dfdbbf6bdb"]
+  }],
+  "urls": [],
+  "plugins": []
+}

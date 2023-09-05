@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  sentry_api:
+    build: ./SentryAPI
+    ports:
+      - "5000:80"
+  symbol:
+    build: ./milsymbol-server
+    ports:
+      - "2525:2525"

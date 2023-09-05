@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eCuW+JBRdCuRsVWZLJF6IiUg8z+Zup5NVikzUhJ/PgQ=",
+  "Source": "SentryAPI",
+  "BasePath": "_content/SentryAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
