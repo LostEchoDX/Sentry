@@ -26,8 +26,8 @@ jobs:
 
   # This malformed command causes the job to fail
   # Only run this command if the succeed variable is set to false
-  - script: git clone malformed input
-    condition: eq(${{ parameters.succeed }}, false)
+  # - script: git clone malformed input
+  #   condition: eq(${{ parameters.succeed }}, false)
 
   - task: NuGetToolInstaller@1
 
