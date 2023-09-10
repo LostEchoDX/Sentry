@@ -24,12 +24,12 @@ namespace SentryAPI.Pages.PoIs
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.PoI == null)
+            if (id == null || _context.PoIs == null)
             {
                 return NotFound();
             }
 
-            var poi = await _context.PoI.FirstOrDefaultAsync(m => m.ID == id);
+            var poi = await _context.PoIs.FirstOrDefaultAsync(m => m.ID == id);
 
             if (poi == null)
             {
@@ -44,16 +44,16 @@ namespace SentryAPI.Pages.PoIs
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.PoI == null)
+            if (id == null || _context.PoIs == null)
             {
                 return NotFound();
             }
-            var poi = await _context.PoI.FindAsync(id);
+            var poi = await _context.PoIs.FindAsync(id);
 
             if (poi != null)
             {
                 PoI = poi;
-                _context.PoI.Remove(PoI);
+                _context.PoIs.Remove(PoI);
                 await _context.SaveChangesAsync();
             }
 

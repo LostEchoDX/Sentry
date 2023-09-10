@@ -9,11 +9,10 @@ namespace SentryAPI.Data
 {
     public class SentryContext : DbContext
     {
-        public SentryContext (DbContextOptions<SentryContext> options)
-            : base(options)
+        public SentryContext(DbContextOptions<SentryContext> options) : base(options)
         {
         }
 
-        public DbSet<SentryAPI.Models.PoI> PoI { get; set; } = default!;
+        public DbSet<PoI> PoIs { get; set; } = default!;
     }
 }

@@ -31,12 +31,12 @@ namespace SentryAPI.Pages.PoIs
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.PoI == null || PoI == null)
+          if (!ModelState.IsValid || _context.PoIs == null || PoI == null)
             {
                 return Page();
             }
 
-            _context.PoI.Add(PoI);
+            _context.PoIs.Add(PoI);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

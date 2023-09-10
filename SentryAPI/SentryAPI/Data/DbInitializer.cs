@@ -1,13 +1,14 @@
 ﻿using SentryAPI.Models;
+using SentryAPI.Repositories;
 
 namespace SentryAPI.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(SentryContext context)
+        public static void Initialize(IRepository repository)
         {
             // Look for any students.
-            if (context.PoI.Any())
+            if (repository.GetPoIs().Any())
             {
                 return;   // DB has been seeded
             }
@@ -20,8 +21,8 @@ namespace SentryAPI.Data
             new PoI{drone_id="a", _class="civilian",f_id="friend",picture="a", latitude="48.84616278031766", longitude="2.334603986455451"},
             };
 
-            context.PoI.AddRange(pois);
-            context.SaveChanges();
+            repository.GetPoIs().ToList().AddRange(pois);
+            repository.SaveChanges();
         }
     }
 }

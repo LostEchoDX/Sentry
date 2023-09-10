@@ -23,9 +23,9 @@ namespace SentryAPI.Pages.PoIs
 
         public async Task OnGetAsync()
         {
-            if (_context.PoI != null)
+            if (_context.PoIs != null)
             {
-                PoI = await _context.PoI.ToListAsync();
+                PoI = await _context.PoIs.ToListAsync();
             }
         }
     }

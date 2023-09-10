@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryTest\\SentryTest.csproj": {}
+    "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryTest\\SentryTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryTest\\SentryTest.csproj": {
+    "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryTest\\SentryTest.csproj",
-        "projectName": "SentryTest",
-        "projectPath": "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryTest\\SentryTest.csproj",
+        "projectUniqueName": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj",
+        "projectName": "SentryAPI",
+        "projectPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj",
         "packagesPath": "C:\\Users\\LostE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryTest\\obj\\",
+        "outputPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LostE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "MSTest.TestAdapter": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -48,9 +52,145 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.7.2, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.12.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.117, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryTest\\SentryTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryTest\\SentryTest.csproj",
+        "projectName": "SentryTest",
+        "projectPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryTest\\SentryTest.csproj",
+        "packagesPath": "C:\\Users\\LostE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LostE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj": {
+                "projectPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.2, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
             },
             "coverlet.collector": {
               "target": "Package",

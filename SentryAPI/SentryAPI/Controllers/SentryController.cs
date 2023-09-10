@@ -5,6 +5,8 @@ using SentryAPI.Models;
 using System.Text.Json;
 using SentryAPI.Data;
 using SentryAPI.Selenium;
+using Microsoft.EntityFrameworkCore;
+using SentryAPI.Repositories;
 
 namespace SentryAPI.Controllers
 {
@@ -13,11 +15,11 @@ namespace SentryAPI.Controllers
     public class SentryController : Controller
     {
         private List<string> keys = new List<string>() { "drone_id", "_class", "f_id", "picture", "latitude", "longitude"};
-        private SentryContext _context;
+        private IRepository _poiRepository;
 
-        public SentryController(SentryContext context)
+        public SentryController(IRepository poiRepository)
         {
-            _context = context;
+            _poiRepository = poiRepository;
         }
 
         // GET: PoIController
@@ -41,55 +43,153 @@ namespace SentryAPI.Controllers
 
         // POST: PoIController/Create
         [HttpPost("pois")]
-        public async void Create(string json)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult Create(string json)
         {
             try
             {
+                if (json == null)
+                {
+                    return BadRequest();
+                }
                 PoI poi = JsonSerializer.Deserialize<PoI>(json);
-                List<object> values = new List<object>() { poi.drone_id, poi._class, poi.f_id, poi.picture, 
-                    poi.latitude, poi.longitude};
+                //List<object> values = new List<object>() { poi.drone_id, poi._class, poi.f_id, poi.picture, 
+                //    poi.latitude, poi.longitude};
                 //SQL.CreateEntryLite("SPI", keys, values);
-                _context.Add(poi);
-                await _context.SaveChangesAsync();
+                _poiRepository.InsertPoI(poi);
+                _poiRepository.SaveChanges();
                 //return RedirectToAction(nameof(Index));
+                return CreatedAtAction(nameof(GetLine), new { id = poi.ID }, poi);
             }
             catch
             {
-                //return View();
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
 
         // GET: PoIController/Get
         [HttpGet("pois")]
-        public List<PoI> Get()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult Get()
         {
             try
             {
                 //string json = SQL.ReadTableLite("SPI");
                 //PoI[] poi = JsonSerializer.Deserialize<PoI[]>(json);
-                TestScript.ChromeSession();
-                return _context.PoI.ToList(); ;
+                //TestScript.ChromeSession();
+                var records = _poiRepository.GetPoIs().ToList();
+
+                if (records == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(records);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine(ex.Message);
-                return null;
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
 
         // GET: PoIController/Get
         [HttpGet("pois/{id}")]
-        public PoI GetLine(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetLine(int id)
         {
             try
             {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
                 //string json = SQL.ReadLineLite("SPI", id);
                 //PoI[] poi = JsonSerializer.Deserialize<PoI[]>(json);
-                return _context.PoI.FirstOrDefault(m => m.ID == id);
+                var record = _poiRepository.GetPoIById(id);
+
+                if (record == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(record);
             }
             catch
             {
-                return null;
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpDelete("pois/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                //string json = SQL.ReadLineLite("SPI", id);
+                //PoI[] poi = JsonSerializer.Deserialize<PoI[]>(json);
+
+                _poiRepository.DeletePoI(id);
+                _poiRepository.SaveChanges();
+                return Ok();
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPut("pois/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult Update(int id, string json)
+        {
+            try
+            {
+                if (id == null || json == null)
+                {
+                    return NotFound();
+                }
+
+                //string json = SQL.ReadLineLite("SPI", id);
+                //PoI[] poi = JsonSerializer.Deserialize<PoI[]>(json);
+
+                var poiToUpdate = _poiRepository.GetPoIs().FirstOrDefault(m => m.ID == id);
+
+                if (poiToUpdate == null)
+                {
+                    return NotFound();
+                }
+
+                PoI poi = JsonSerializer.Deserialize<PoI>(json);
+                poiToUpdate.drone_id = poi.drone_id;
+                poiToUpdate._class = poi._class;
+                poiToUpdate.f_id = poi.f_id;
+                poiToUpdate.picture = poi.picture;
+                poiToUpdate.latitude = poi.latitude;
+                poiToUpdate.longitude = poi.longitude;
+                _poiRepository.UpdatePoI(poiToUpdate);
+                _poiRepository.SaveChanges();
+                return Ok(poi);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryAPI\\SentryAPI.csproj": {}
+    "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryAPI\\SentryAPI.csproj": {
+    "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryAPI\\SentryAPI.csproj",
+        "projectUniqueName": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj",
         "projectName": "SentryAPI",
-        "projectPath": "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryAPI\\SentryAPI.csproj",
+        "projectPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\SentryAPI.csproj",
         "packagesPath": "C:\\Users\\LostE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LostE\\source\\repos\\T-ESP-900-28464-Sentry-4\\SentryAPI\\SentryAPI\\obj\\",
+        "outputPath": "C:\\Users\\LostE\\source\\repos\\Sentry\\SentryAPI\\SentryAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LostE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,15 +52,19 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

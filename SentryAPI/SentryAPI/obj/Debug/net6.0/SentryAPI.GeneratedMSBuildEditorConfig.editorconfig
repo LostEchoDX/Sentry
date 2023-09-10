@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SentryAPI
 build_property.RootNamespace = SentryAPI
-build_property.ProjectDir = C:\Users\LostE\source\repos\T-ESP-900-28464-Sentry-4\SentryAPI\SentryAPI\
+build_property.ProjectDir = C:\Users\LostE\source\repos\Sentry\SentryAPI\SentryAPI\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\LostE\source\repos\T-ESP-900-28464-Sentry-4\SentryAPI\SentryAPI
+build_property.MSBuildProjectDirectory = C:\Users\LostE\source\repos\Sentry\SentryAPI\SentryAPI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Pages/PoIs/Create.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Pages/PoIs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9Jc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Pages/PoIs/Delete.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Pages/PoIs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9Jc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Pages/PoIs/Details.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Pages/PoIs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9Jc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Pages/PoIs/Edit.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Pages/PoIs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9Jc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Pages/PoIs/Index.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Pages/PoIs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9Jc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LostE/source/repos/T-ESP-900-28464-Sentry-4/SentryAPI/SentryAPI/Views/PoI/Index.cshtml]
+[C:/Users/LostE/source/repos/Sentry/SentryAPI/SentryAPI/Views/PoI/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9JXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

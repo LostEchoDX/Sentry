@@ -1,12 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SentryAPI.Data;
+using SentryAPI.Repositories;
 using SentryAPI.Selenium;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<SentryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SentryContext") ?? throw new InvalidOperationException("Connection string 'SentryContext' not found.")));
+builder.Services.AddScoped<IRepository, PoIRepository>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -28,9 +31,9 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<SentryContext>();
+    var repo = services.GetRequiredService<IRepository>();
     //context.Database.EnsureCreated();
-    DbInitializer.Initialize(context);
+    DbInitializer.Initialize(repo);
     //TestScript.ChromeSession();
 }
 

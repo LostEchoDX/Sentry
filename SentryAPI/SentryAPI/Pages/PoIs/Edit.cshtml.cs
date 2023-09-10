@@ -25,12 +25,12 @@ namespace SentryAPI.Pages.PoIs
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.PoI == null)
+            if (id == null || _context.PoIs == null)
             {
                 return NotFound();
             }
 
-            var poi =  await _context.PoI.FirstOrDefaultAsync(m => m.ID == id);
+            var poi =  await _context.PoIs.FirstOrDefaultAsync(m => m.ID == id);
             if (poi == null)
             {
                 return NotFound();
@@ -48,7 +48,7 @@ namespace SentryAPI.Pages.PoIs
                 return Page();
             }
 
-            _context.Attach(PoI).State = EntityState.Modified;
+            _context.Entry(PoI).State = EntityState.Modified;
 
             try
             {
@@ -71,7 +71,7 @@ namespace SentryAPI.Pages.PoIs
 
         private bool PoIExists(int id)
         {
-          return (_context.PoI?.Any(e => e.ID == id)).GetValueOrDefault();
+          return (_context.PoIs?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }
