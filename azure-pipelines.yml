@@ -17,11 +17,13 @@ variables:
 jobs:
 - job: Work
   steps:
+
+  - task: NuGetToolInstaller@1
+
   # This malformed command causes the job to fail
   # Only run this command if the succeed variable is set to false
   - script: git clone malformed input
     condition: eq(${{ parameters.succeed }}, false)
-  - task: NuGetToolInstaller@1
 
   - task: NuGetCommand@2
     inputs:
